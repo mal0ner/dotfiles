@@ -4,6 +4,7 @@ alias vim='nvim'
 alias ls='lsd -l --group-dirs first'
 alias lsa='lsd -A --group-dirs first'
 alias ','='z' #use the z script for better cd with history
+alias lg='lazygit'
 
 #FREE STRING ALIASES
 alias 'packerplugins'='cd ~/.local/share/nvim/site/pack/packer/start/'
