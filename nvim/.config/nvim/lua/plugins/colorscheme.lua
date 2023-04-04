@@ -3,10 +3,11 @@ return {
   { "catppuccin/nvim" },
   { "rebelot/kanagawa.nvim" },
   { "lighthaus-theme/vim-lighthaus" },
+  { "rose-pine/neovim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-wave",
+      colorscheme = "rose-pine-main",
     },
   },
 }
