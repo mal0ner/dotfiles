@@ -1,3 +1,5 @@
+local ctable = { "rose-pine-main", "kanagawa-dragon", "catppuccin-mocha" }
+
 return {
   -- Configure LazyVim to load habamax as default
   { "catppuccin/nvim" },
@@ -7,7 +9,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine-main",
+      colorscheme = ctable[math.random(#ctable)],
     },
   },
 }
