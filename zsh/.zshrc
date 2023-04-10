@@ -20,5 +20,6 @@ source "$HOME/.config/zsh/exports.zsh"
 # fm6000 --random --color random
 LIVE_COUNTER=$(ps a | awk '{print $2}' | grep -vi -e "tty*" -e "?" | uniq | wc -l);
 if [ $LIVE_COUNTER -eq 1 ]; then
-  fm6000 --random --color random
+  # fm6000 --random --color random
+  fortune | cowsay
 fi
