@@ -18,3 +18,5 @@ vim.keymap.set("n", "<S-Up>", ":resize -2<CR>", { noremap = true })
 vim.keymap.set("n", "<S-Down>", ":resize +2<CR>", { noremap = true })
 vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", { noremap = true })
 vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", { noremap = true })
+
+vim.keymap.set("n", "<leader>cc", "<cmd>Navbuddy<cr>", { desc = "Open Navbuddy" })
