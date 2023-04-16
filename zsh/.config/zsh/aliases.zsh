@@ -11,6 +11,8 @@ alias 'packerplugins'='cd ~/.local/share/nvim/site/pack/packer/start/'
 alias 'nvimconfig'='cd ~/.config/nvim'
 alias 'bigcum'='cat ~/Music/Folder/Folder/Folder/Folder/Folder/Folder/Folder/Folder/Folder/Folder/System32.txt | lolcat'
 alias 'wikisole'='.local/bin/wikisole.sh'
+alias 'mux'='tmuxinator'
+alias 'dotfiles'='cd ~/.dotfiles/ && nvim .'
 #
 alias :w="cowsay 'You are not in vim anymore.'"
 alias :q="cowsay 'You are not in vim anymore.'"
