@@ -1,0 +1,55 @@
+<Leader> = <C-s>
+
+Sessions:
+tmux new -> create new session
+tmux new-session -> create new session
+:new -> create new session
+tmux new -s <session-name> -> create new named session
+:new -s <session-name> -> create new named session
+tmux kill-ses -t mysession -> kill/delete session
+tmux kill-session -t mysession -> kill/delete session
+tmux kill-session -a -> kill/delete all sessions except current
+tmux kill-session -a -t <session-name> -> kill/delete all sessions except named session
+tmux ls -> list/show all sessions
+tmux list-sessions -> list/show all sessions
+<C-s>+<dollar-sign> -> rename session
+<C-s>+d -> detatch from session
+<C-s>+s -> list/show all sessions
+tmux a -> attach to last session
+tmux at -> attach to last session
+tmux attach -> attach to last session
+tmux attach-session -> attach to last session
+tmux a -t <session-name> -> attach to named session
+tmux at -t <session-name> -> attach to named session
+tmux attach -t <session-name> -> attach to named session
+tmux attach-session -t <session-name> -> attach to named session
+<C-s>+<Shift-w> -> session and window preview
+<C-s>+( -> previous session
+<C-s>+) -> next session
+
+Windows:
+<C-s>+c -> create window
+<C-s>+, -> rename window
+<C-s>+& -> close current window
+<C-s>+w -> list windows
+<C-s>+p -> previous window
+<C-s>+n -> next window
+<C-s>+[0-9] -> select window by number
+<C-s>+l -> toggle last active window
+
+Panes:
+<C-s>+; -> toggle last active pane
+<C-s>+% -> split horizontal
+<C-s>+\" -> split vertical
+<C-s>+{ -> move current pane left
+<C-s>+} -> move current pane right
+<C-s>+[Left, Right, Up, Down] -> switch/move to pane in direction
+<C-s>+q -> show pane numbers/indexes
+<C-s>+q+[0-9] -> switch/select pane by number
+<C-s>+z -> toggle pane zoom
+<C-s>+! -> convert / switch pane into a window
+<C-s>+<Alt-[Left, Right, Up, Down]> -> rezie pane
+<C-s>+x -> close pane
+
+Command Mode:
+<C-s>+: -> enter command mode

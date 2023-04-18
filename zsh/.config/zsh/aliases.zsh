@@ -13,6 +13,7 @@ alias 'bigcum'='cat ~/Music/Folder/Folder/Folder/Folder/Folder/Folder/Folder/Fol
 alias 'wikisole'='.local/bin/wikisole.sh'
 alias 'mux'='tmuxinator'
 alias 'dotfiles'='cd ~/.dotfiles/ && nvim .'
+alias 'tmux-bindings' = 'cat ~/scripts/tmux-bindings.txt | fzf'
 #
 alias :w="cowsay 'You are not in vim anymore.'"
 alias :q="cowsay 'You are not in vim anymore.'"
