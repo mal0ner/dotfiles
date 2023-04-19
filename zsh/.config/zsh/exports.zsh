@@ -1,17 +1,22 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(zoxide init zsh)"
+eval "$(tmuxifier init -)"
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/.tmuxifier/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/cameronmalone/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ 1 -eq 0 ]; then
-    eval "$__conda_setup"
+# __conda_setup="$('/Users/cameronmalone/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ 1 -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+if [ -f "/Users/cameronmalone/anaconda3/etc/profile.d/conda.sh" ]; then
+    . "/Users/cameronmalone/anaconda3/etc/profile.d/conda.sh"
 else
-    if [ -f "/Users/cameronmalone/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/cameronmalone/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/cameronmalone/anaconda3/bin:$PATH"
-    fi
+    export PATH="/Users/cameronmalone/anaconda3/bin:$PATH"
 fi
-unset __conda_setup
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
