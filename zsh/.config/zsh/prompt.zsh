@@ -40,5 +40,5 @@ PROMPT="%{$fg_bold[white]%}𝝺%] %(?:%{$fg_no_bold[white]%}-> :%{$fg_no_bold[re
 PROMPT+="\$vcs_info_msg_0_ "
 
 #PF_INFO="title os host kernel uptime pkgs memory palette" pfetch
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 ################################################################################
