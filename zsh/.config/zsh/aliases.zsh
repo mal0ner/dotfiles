@@ -1,10 +1,11 @@
 alias vim='nvim'
 
-#LS ALIASES
+#command ALIASES
 alias ls='lsd -l --group-dirs first'
 alias lsa='lsd -A --group-dirs first'
 alias ','='z' #use the z (zoxide) script for better cd with history
 alias 'lg'='lazygit'
+alias '..'='cd ..'
 
 #FREE STRING ALIASES
 alias 'bigcum'='cat ~/Music/Folder/Folder/Folder/Folder/Folder/Folder/Folder/Folder/Folder/Folder/System32.txt | lolcat'
