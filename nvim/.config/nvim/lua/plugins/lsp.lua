@@ -19,6 +19,7 @@ return {
         omnisharp = {},
         rust_analyzer = {},
         ruff_lsp = {},
+        pyright = {},
       },
     },
   },
