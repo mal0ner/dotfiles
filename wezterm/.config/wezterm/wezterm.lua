@@ -3,8 +3,9 @@ local config = {}
 
 -- color, font, background
 config.color_scheme = "rose-pine"
-config.font = wezterm.font("CaskaydiaCove Nerd Font")
-config.font_size = 16
+-- config.font = wezterm.font("CaskaydiaCove Nerd Font")
+config.font = wezterm.font("MapleMono Nerd Font")
+config.font_size = 17
 config.window_background_opacity = 0.95
 
 -- key bindings
