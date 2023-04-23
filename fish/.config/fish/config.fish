@@ -5,13 +5,17 @@ end
 starship init fish | source
 zoxide init fish | source
 
+set -Ux EDITOR nvim
+set -Ux VOLTA_HOME $HOME/.volta
+set -Ux fish_greeting #disable fish greeting
+
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
+fish_add_path $VOLTA_HOME/bin
 
-set -Ux EDITOR nvim
-set -Ux fish_greeting #disable fish greeting
+
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
