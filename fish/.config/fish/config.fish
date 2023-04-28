@@ -14,8 +14,9 @@ fish_add_path /opt/homebrew/sbin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $VOLTA_HOME/bin
+fish_add_path $HOME/.cargo/bin
 
-
+alias ls "exa --icons --group-directories-first --color always"
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
