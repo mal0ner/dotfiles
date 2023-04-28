@@ -1,10 +1,11 @@
+#exports
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$PATH:$VOLTA_HOME/bin"
+export PATH="$PATH:$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin"
+
+#cmd evals
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(zoxide init zsh)"
-eval "$(tmuxifier init -)"
-
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="$HOME/.tmuxifier/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -12,11 +13,11 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 # if [ 1 -eq 0 ]; then
 #     eval "$__conda_setup"
 # else
-if [ -f "/Users/cameronmalone/anaconda3/etc/profile.d/conda.sh" ]; then
-    . "/Users/cameronmalone/anaconda3/etc/profile.d/conda.sh"
-else
-    export PATH="/Users/cameronmalone/anaconda3/bin:$PATH"
-fi
+# if [ -f "/Users/cameronmalone/anaconda3/etc/profile.d/conda.sh" ]; then
+#     . "/Users/cameronmalone/anaconda3/etc/profile.d/conda.sh"
+# else
+#     export PATH="/Users/cameronmalone/anaconda3/bin:$PATH"
+# fi
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
