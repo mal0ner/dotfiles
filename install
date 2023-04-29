@@ -12,20 +12,13 @@ echo "=========== INSTALL HOMEBREW ==========="
 
 #git gotten
 echo "=========== BREW BUNDLE + GIT NVIM ITERM ==========="
-brew install git
-brew install python
 brew install neovim
-brew install --cask iterm2
+brew install --cask kitty
 brew bundle install --file=~/.dotfiles/homebrew/Brewfile
 
 #stow the config files
 stow --target $HOME zsh
 stow --target $HOME nvim
-
-#miniconda install
-wget "https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh"
-bash Miniconda3-latest-MacOSX-arm64.sh
-conda install -c conda-forge mamba
 
 echo "===========  DEFSH --> ZSH =========== "
 # Change default shell to zsh
