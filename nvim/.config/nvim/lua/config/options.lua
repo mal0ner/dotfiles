@@ -4,3 +4,7 @@
 
 -- Set winbar
 vim.opt.winbar = "%=%m %f"
+vim.opt.guicursor = ""
+
+-- set line number highlighting off
+vim.cmd("hi! LineNr guibg=none")

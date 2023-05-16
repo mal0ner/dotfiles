@@ -18,8 +18,8 @@ return {
       servers = {
         omnisharp = {},
         rust_analyzer = {},
-        ruff_lsp = {},
         pyright = {},
+        ruff_lsp = {},
       },
     },
   },
