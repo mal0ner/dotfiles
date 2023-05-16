@@ -28,3 +28,11 @@ abbr mae 'micromamba activate | fzf --query="$1" -m --preview "micromamba env li
 abbr mi "micromamba install"
 # man-style pages with tldr
 abbr toolong "tldr --list | fzf --header 'I ain readin allat' --reverse --preview 'tldr {1} --color=always' --preview-window=right,80% | xargs tldr"
+
+
+# buku - CLI Bookmarks Manager https://github.com/jarun/buku#usage
+abbr b "buku --suggest"
+abbr bs "buku --suggest -s"
+abbr bS "buku --suggest -S"
+abbr bst "buku --suggest --stag"
+abbr bw "buku --suggest -w"
