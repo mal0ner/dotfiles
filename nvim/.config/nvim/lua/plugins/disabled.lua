@@ -2,4 +2,5 @@
 return {
   { "noice.nvim", enabled = false },
   { "nvim-notify", enabled = false },
+  { "marks.nvim", enabled = false },
 }

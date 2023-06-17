@@ -7,9 +7,7 @@ return {
       table.insert(opts.sources, nls.builtins.formatting.black)
       table.insert(opts.sources, nls.builtins.formatting.csharpier)
       table.insert(opts.sources, nls.builtins.formatting.rustfmt)
-      table.insert(opts.sources, nls.builtins.diagnostics.proselint)
-      table.insert(opts.sources, nls.builtins.code_actions.proselint)
-      table.insert(opts.sources, nls.builtins.diagnostics.write_good)
+      table.insert(opts.sources, nls.builtins.formatting.prettierd)
     end,
   },
 }

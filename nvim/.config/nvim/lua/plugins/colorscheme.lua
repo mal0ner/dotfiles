@@ -14,9 +14,18 @@ return {
   { "nyoom-engineering/oxocarbon.nvim" },
   { "https://codeberg.org/oahlen/iceberg.nvim" },
   {
+    "neanias/everforest-nvim",
+    config = function()
+      require("everforest").setup({
+        background = "hard",
+        transparent_background_level = 3,
+      })
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "iceberg",
+      colorscheme = "everforest",
     },
   },
 }

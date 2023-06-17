@@ -26,6 +26,7 @@ return {
       if type(opts.ensure_installed) == "table" then
         vim.list_extend(opts.ensure_installed, { "c_sharp" })
         vim.list_extend(opts.ensure_installed, { "rust" })
+        vim.list_extend(opts.ensure_installed, { "typescript" })
       end
     end,
   },
