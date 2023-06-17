@@ -17,6 +17,7 @@ fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.config/emacs/bin
 fish_add_path $HOME/$VOLTA_HOME/bin
+# fish_add_path $HOME/.local/share/nvim/mason/bin
 
 alias ls "exa --icons --group-directories-first --color always"
 

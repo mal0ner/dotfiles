@@ -1,6 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export CC:/opt/homebrew/Cellar/gcc/13\x2e1\x2e0/bin/gcc\x2d13\x1envim\x1e\x2dc\x1eTSInstall\x20norg
 SETUVAR --export EDITOR:nvim
 SETUVAR --export FZF_CTRL_R_OPTS:\x2d\x2dborder\x2dlabel\x3d\x27\x20history\x20\x27\x20\x2d\x2dprompt\x3d\x27\uea82\x20\x20\x27
 SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dreverse\x20\x2d\x2dborder\x20rounded\x20\x2d\x2dno\x2dinfo\x20\x2d\x2dpointer\x3d\x27\uf054\x27\x20\x2d\x2dmarker\x3d\x27\uf02e\x20\x27\x20\x2d\x2dansi\x20\x2d\x2dcolor\x3d\x2716\x2cbg\x2b\x3a\x2d1\x2cgutter\x3a\x2d1\x2cprompt\x3a5\x2cpointer\x3a5\x2cmarker\x3a6\x2cborder\x3a4\x2clabel\x3a4\x27
@@ -39,7 +38,7 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Users/cameronmalone/\x2econfig/emacs/bin\x1e/Users/cameronmalone/\x2ecargo/bin\x1e/Users/cameronmalone/\x2evolta/bin\x1e/Users/cameronmalone/\x2econfig/tmux/plugins/t\x2dsmart\x2dtmux\x2dsession\x2dmanager/bin\x1e/Users/cameronmalone/\x2elocal/bin\x1e/opt/homebrew/sbin\x1e/opt/homebrew/bin
+SETUVAR fish_user_paths:/Users/cameronmalone/\x2elocal/share/nvim/mason/bin\x1e/Users/cameronmalone/\x2econfig/emacs/bin\x1e/Users/cameronmalone/\x2ecargo/bin\x1e/Users/cameronmalone/\x2evolta/bin\x1e/Users/cameronmalone/\x2econfig/tmux/plugins/t\x2dsmart\x2dtmux\x2dsession\x2dmanager/bin\x1e/Users/cameronmalone/\x2elocal/bin\x1e/opt/homebrew/sbin\x1e/opt/homebrew/bin
 SETUVAR sponge_allow_previously_successful:true
 SETUVAR sponge_delay:2
 SETUVAR sponge_filters:sponge_filter_failed\x1esponge_filter_matched
