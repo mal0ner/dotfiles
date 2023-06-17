@@ -18,7 +18,7 @@ disable_ligatures never
 # font_family SFMono Nerd Font
 # font_family ViktorMono Nerd Font
 font_family IosevkaTerm Nerd Font
-background_opacity 0.97
+background_opacity 0.95
 
 macos_option_as_alt yes
 hide_window_decorations titlebar-only
@@ -128,6 +128,6 @@ hide_window_decorations titlebar-only
 
 
 # BEGIN_KITTY_THEME
-# Everforest Dark Hard
+# Alabaster
 include current-theme.conf
 # END_KITTY_THEME
