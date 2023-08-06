@@ -14,14 +14,34 @@
 -- vim.keymap.set(mode, lhs, rhs, opts)
 -- vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true })
 
-vim.keymap.set("n", "<S-Up>", ":resize -2<CR>", { noremap = true })
-vim.keymap.set("n", "<S-Down>", ":resize +2<CR>", { noremap = true })
-vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", { noremap = true })
-vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", { noremap = true })
+-- resize windows
+vim.keymap.set("n", "<C-S-Up>", ":resize -2<CR>", { noremap = true })
+vim.keymap.set("n", "<C-S-Down>", ":resize +2<CR>", { noremap = true })
+vim.keymap.set("n", "<C-S-Left>", ":vertical resize -2<CR>", { noremap = true })
+vim.keymap.set("n", "<C-S-Right>", ":vertical resize +2<CR>", { noremap = true })
+
 -- nvim navbuddy keymaps
 vim.keymap.set("n", "<leader>cc", "<cmd>Navbuddy<cr>", { desc = "Open Navbuddy" })
+
 -- nvim tmux navigator keymaps
 vim.keymap.set("n", "<C-k>", "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Navigate North in tmux" })
 vim.keymap.set("n", "<C-j>", "<cmd>NvimTmuxNavigateDown<cr>", { desc = "Navigate South in tmux" })
 vim.keymap.set("n", "<C-l>", "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Navigate East in tmux" })
 vim.keymap.set("n", "<C-h>", "<cmd>NvimTmuxNavigateLeft<cr>", { desc = "Navigate West in tmux" })
+
+-- better C-d and C-u, from ThePrimeagen baby
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- cycle through windows with TAB in normal mode, thanks reddit
+vim.keymap.set("n", "<TAB>", "<C-w>w")
+
+-- best remap ever? yes, it is - replace a line in vis-mode
+-- by sending the deleted stuff to the void
+vim.keymap.set("x", "<leader>p", [["_dP]])
+-- delete and send to purgatory
+vim.keymap.set({ "n", "x" }, "<leader>d", [["_d]])
+
+-- This just makes sense
+-- vim.keymap.set({ "n", "x" }, "L", "$")
+-- vim.keymap.set({ "n", "x" }, "H", "^")
