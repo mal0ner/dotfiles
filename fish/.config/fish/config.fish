@@ -8,7 +8,9 @@ zoxide init fish | source
 set -Ux EDITOR nvim
 set -Ux fish_greeting #disable fish greeting
 set -Ux fish_key_bindings fish_vi_key_bindings
-set -Ux VOLTA_HOME $HOME/.volta
+# set -Ux VOLTA_HOME $HOME/.volta
+# set -Ux VOLTA_FEATURE_PNPM 1 #enable volta pnpm support
+set -x DYLD_FALLBACK_LIBRARY_PATH "$(xcode-select --print-path)/usr/lib/"
 
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
@@ -27,3 +29,10 @@ set -gx MAMBA_EXE /opt/homebrew/opt/micromamba/bin/micromamba
 set -gx MAMBA_ROOT_PREFIX /Users/cameronmalone/micromamba
 $MAMBA_EXE shell hook --shell fish --prefix $MAMBA_ROOT_PREFIX | source
 # <<< mamba initialize <<<
+
+# pnpm
+set -gx PNPM_HOME "/Users/cameronmalone/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

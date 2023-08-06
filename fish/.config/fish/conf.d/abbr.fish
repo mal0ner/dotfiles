@@ -12,6 +12,9 @@ abbr claer clear
 abbr clera clear
 abbr , z
 
+#better rm
+abbr rm rip
+
 # tmux
 abbr tk "tmux kill-server"
 abbr ta "tmux a"
@@ -36,3 +39,6 @@ abbr bs "buku --suggest -s"
 abbr bS "buku --suggest -S"
 abbr bst "buku --suggest --stag"
 abbr bw "buku --suggest -w"
+
+#pnpm
+abbr pp pnpm
