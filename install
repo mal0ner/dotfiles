@@ -13,7 +13,7 @@ echo "=========== INSTALL HOMEBREW ==========="
 #git gotten
 echo "=========== BREW BUNDLE + GIT NVIM ITERM ==========="
 brew install neovim
-brew install --cask kitty
+# brew install --cask kitty
 brew bundle install --file=~/.dotfiles/homebrew/Brewfile
 
 #stow the config files
