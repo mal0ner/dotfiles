@@ -4,15 +4,17 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    setup = {
-      variant = "main",
-      disable_background = true,
-      disable_float_background = true,
-    },
+    config = function()
+      require("rose-pine").setup({
+        disable_background = true,
+        disable_float_background = true,
+      })
+    end,
   },
   { "folke/tokyonight.nvim" },
   { "nyoom-engineering/oxocarbon.nvim" },
   { "https://codeberg.org/oahlen/iceberg.nvim" },
+  { "LunarVim/lunar.nvim" },
   {
     "neanias/everforest-nvim",
     config = function()
@@ -25,7 +27,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "rose-pine",
     },
   },
 }
