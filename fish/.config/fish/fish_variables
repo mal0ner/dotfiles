@@ -35,7 +35,7 @@ SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR --export fish_greeting:\x1d
-SETUVAR --export fish_key_bindings:fish_vi_key_bindings
+SETUVAR --export fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_background:\x1d
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1e\x2d\x2ditalics
@@ -49,7 +49,7 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dreverse
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Users/cameronmalone/\x2elocal/share/nvim/mason/bin\x1e/Users/cameronmalone/\x2econfig/emacs/bin\x1e/Users/cameronmalone/\x2ecargo/bin\x1e/Users/cameronmalone/\x2evolta/bin\x1e/Users/cameronmalone/\x2econfig/tmux/plugins/t\x2dsmart\x2dtmux\x2dsession\x2dmanager/bin\x1e/Users/cameronmalone/\x2elocal/bin\x1e/opt/homebrew/sbin\x1e/opt/homebrew/bin
+SETUVAR fish_user_paths:/Users/cameronmalone/go/bin\x1e/Users/cameronmalone/\x2elocal/share/nvim/mason/bin\x1e/Users/cameronmalone/\x2econfig/emacs/bin\x1e/Users/cameronmalone/\x2ecargo/bin\x1e/Users/cameronmalone/\x2evolta/bin\x1e/Users/cameronmalone/\x2econfig/tmux/plugins/t\x2dsmart\x2dtmux\x2dsession\x2dmanager/bin\x1e/Users/cameronmalone/\x2elocal/bin\x1e/opt/homebrew/sbin\x1e/opt/homebrew/bin
 SETUVAR sponge_allow_previously_successful:true
 SETUVAR sponge_delay:2
 SETUVAR sponge_filters:sponge_filter_failed\x1esponge_filter_matched

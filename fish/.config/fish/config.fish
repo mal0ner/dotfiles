@@ -19,7 +19,10 @@ fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.config/emacs/bin
 fish_add_path $HOME/$VOLTA_HOME/bin
+fish_add_path $HOME/go/bin
 # fish_add_path $HOME/.local/share/nvim/mason/bin
+
+fish_default_key_bindings
 
 alias ls "exa --icons --group-directories-first --color always"
 
@@ -31,8 +34,8 @@ $MAMBA_EXE shell hook --shell fish --prefix $MAMBA_ROOT_PREFIX | source
 # <<< mamba initialize <<<
 
 # pnpm
-set -gx PNPM_HOME "/Users/cameronmalone/Library/pnpm"
+set -gx PNPM_HOME /Users/cameronmalone/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
