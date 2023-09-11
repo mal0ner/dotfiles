@@ -1,6 +1,8 @@
 return {
   {
     "abecodes/tabout.nvim",
+    lazy = true,
+    event = "InsertEnter",
     config = {
       tabkey = "<Tab>",
       backwards_tabkey = "<S-Tab>",
@@ -24,6 +26,7 @@ return {
     },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
+      "L3MON4D3/LuaSnip",
     },
   },
 }

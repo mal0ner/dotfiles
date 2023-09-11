@@ -1,0 +1,54 @@
+return {}
+-- return {
+--   {
+--     "mg979/vim-visual-multi",
+--   },
+-- {
+--   "nvim-neorg/neorg",
+--   build = ":Neorg sync-parsers",
+--   dependencies = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope" },
+--   config = function()
+--     require("neorg").setup({
+--       load = {
+--         ["core.defaults"] = {}, -- Loads default behaviour
+--         ["core.concealer"] = { config = { icons = { code_block = { conceal = true } } } }, -- Adds pretty icons to your documents
+--         ["core.dirman"] = { -- Manages Neorg workspaces
+--           config = {
+--             workspaces = {
+--               school = "~/notes/school",
+--               wiki = "~/notes/wiki",
+--             },
+--             default_workspace = "school",
+--           },
+--         },
+--         ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Neorg]" } },
+--         ["core.integrations.telescope"] = {},
+--         ["core.keybinds"] = {
+--           config = {
+--             hook = function(keybinds)
+--               keybinds.remap_event("norg", "n", "<leader>nc", "core.dirman.new.note")
+--               keybinds.remap_event("norg", "n", "<leader>ns", "core.integrations.telescope.find_linkable")
+--               keybinds.remap_event("norg", "n", "<leader>nil", "core.integrations.telescope.insert_link")
+--               -- promotion / demotion keybinds
+--               keybinds.remap_event("norg", "n", "<leader>nhd", "core.promo.demote")
+--               keybinds.remap_event("norg", "v", "<leader>nhd", "core.promo.demote_range")
+--               keybinds.remap_event("norg", "n", "<leader>nhp", "core.promo.promote")
+--               keybinds.remap_event("norg", "v", "<leader>nhd", "core.promo.promote_range")
+--             end,
+--           },
+--         },
+--       },
+--     })
+--   end,
+--   cmd = "Neorg",
+--   ft = "norg",
+-- },
+-- {
+--   "SmiteshP/nvim-navbuddy",
+--   opts = {
+--     lsp = {
+--       auto_attach = true,
+--     },
+--   },
+-- },
+-- }

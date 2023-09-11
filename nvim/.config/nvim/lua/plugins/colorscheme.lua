@@ -1,8 +1,22 @@
 return {
-  { "catppuccin/nvim" },
-  { "rebelot/kanagawa.nvim" },
+  {
+    "catppuccin/nvim",
+    config = function()
+      require("catppuccin").setup({
+        transparent_background = true,
+      })
+    end,
+  },
+  { "rebelot/kanagawa.nvim", lazy = true },
+  {
+    "mcchrish/zenbones.nvim",
+    dependencies = {
+      "rktjmp/lush.nvim",
+    },
+  },
   {
     "rose-pine/neovim",
+    lazy = true,
     name = "rose-pine",
     config = function()
       require("rose-pine").setup({
@@ -11,12 +25,9 @@ return {
       })
     end,
   },
-  { "folke/tokyonight.nvim" },
-  { "nyoom-engineering/oxocarbon.nvim" },
-  { "https://codeberg.org/oahlen/iceberg.nvim" },
-  { "LunarVim/lunar.nvim" },
   {
     "neanias/everforest-nvim",
+    lazy = true,
     config = function()
       require("everforest").setup({
         background = "hard",
@@ -27,7 +38,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "neobones",
     },
   },
 }

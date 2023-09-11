@@ -12,11 +12,12 @@ return {
     opts = function()
       local cmp = require("cmp")
       return {
+        -- setup = {
+        --   preselect = cmp.PreselectMode.None,
+        -- },
+        preselect = cmp.PreselectMode.None,
         completion = {
           completeopt = "menu,menuone,noinsert,noselect",
-        },
-        setup = {
-          preselect = cmp.PreselectMode.None,
         },
         snippet = {
           expand = function(args)
@@ -35,17 +36,17 @@ return {
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-          ["<S-CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-          }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          -- ["<S-CR>"] = cmp.mapping.confirm({
+          --   behavior = cmp.ConfirmBehavior.Replace,
+          --   select = true,
+          -- }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
-          { name = "buffer", keyword_length = 5 },
+          -- { name = "neorg" },
           { name = "path" },
-        }),
+        }, { { name = "buffer", keyword_length = 5 } }),
         formatting = {
           format = function(_, item)
             local icons = require("lazyvim.config").icons.kinds

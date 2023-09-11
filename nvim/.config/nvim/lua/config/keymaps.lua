@@ -42,6 +42,10 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- delete and send to purgatory
 vim.keymap.set({ "n", "x" }, "<leader>d", [["_d]])
 
+-- who uses semicolon anyway?
+-- vim.keymap.set("n", ";", ":")
+-- vim.keymap.set("n", ":", ";")
+
 -- This just makes sense
 -- vim.keymap.set({ "n", "x" }, "L", "$")
 -- vim.keymap.set({ "n", "x" }, "H", "^")
