@@ -25,5 +25,6 @@ vim.g.zenbones = { transparent_background = true }
 vim.g.forestbones = { transparent_background = true, darken_comments = 80 }
 vim.g.neobones = { transparent_background = true }
 
+-- vim.opt.background = "light"
 -- For Neorg
 -- vim.cmd("cnoreabbrev nw Neorg workspace")

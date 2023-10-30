@@ -14,6 +14,9 @@
 -- vim.keymap.set(mode, lhs, rhs, opts)
 -- vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true })
 
+-- trick to open stuff externally?
+-- Source: https://github.com/UTFeight/vimacs/blob/master/custom/utils.lua
+
 -- resize windows
 vim.keymap.set("n", "<C-S-Up>", ":resize -2<CR>", { noremap = true })
 vim.keymap.set("n", "<C-S-Down>", ":resize +2<CR>", { noremap = true })
@@ -45,7 +48,12 @@ vim.keymap.set({ "n", "x" }, "<leader>d", [["_d]])
 -- who uses semicolon anyway?
 -- vim.keymap.set("n", ";", ":")
 -- vim.keymap.set("n", ":", ";")
+vim.keymap.set("n", "<leader>os", function()
+  local query = vim.fn.input("Query: ")
+  vim.cmd("silent !tmux split-window -h so " .. query)
+end, { desc = "Query StackOverflow (tmux)" })
 
 -- This just makes sense
+-- nevermind lol
 -- vim.keymap.set({ "n", "x" }, "L", "$")
 -- vim.keymap.set({ "n", "x" }, "H", "^")

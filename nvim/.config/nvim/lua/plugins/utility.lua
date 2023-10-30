@@ -1,5 +1,7 @@
--- see https://github.com/alexghergh/nvim-tmux-navigation
 return {
+  -- -------------------------------------------------
+  --               VIM-TMUX-NAVIGATOR                |
+  -- -------------------------------------------------
   {
     "alexghergh/nvim-tmux-navigation",
     opts = {
