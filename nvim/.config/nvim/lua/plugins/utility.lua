@@ -33,4 +33,14 @@ return {
       },
     },
   },
+  -- -------------------------------------------------
+  --               YET ANOTHER BUILD SYSTEM          |
+  -- -------------------------------------------------
+  {
+    "pianocomposer321/yabs.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    branch = "rewrite",
+  },
 }

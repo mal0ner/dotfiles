@@ -30,7 +30,7 @@ abbr md "micromamba deactivate"
 abbr mae 'micromamba activate | fzf --query="$1" -m --preview "micromamba env list"'
 abbr mi "micromamba install"
 # man-style pages with tldr
-abbr toolong "tldr --list | fzf --header 'I ain readin allat' --reverse --preview 'tldr {1} --color=always' --preview-window=right,80% | xargs tldr"
+abbr toolong "tldr --list | fzf --header 'I ain readin allat' --reverse --preview 'tldr {1}' --preview-window=right,80% | xargs tldr"
 
 
 # buku - CLI Bookmarks Manager https://github.com/jarun/buku#usage
@@ -42,3 +42,6 @@ abbr bw "buku --suggest -w"
 
 #pnpm
 abbr pp pnpm
+
+#homebrew
+abbr update "brew outdated | fzf --multi --reverse | xargs brew upgrade"

@@ -74,6 +74,11 @@ return {
         completion = {
           completeopt = "menu,menuone,noinsert,noselect",
         },
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
@@ -94,8 +99,37 @@ return {
           { name = "path" },
           { name = "buffer", keyword_length = 5 },
         }),
+        experimental = {
+          native_menu = false,
+          ghost_text = {
+            hl_group = "LspCodeLens",
+          },
+        },
       }
     end,
+    -- -------------------------------------------------
+    --               SNIPPETATION                      |
+    -- -------------------------------------------------
+    {
+      "L3MON4D3/LuaSnip",
+      keys = {
+        {
+          "<M-n>",
+          function()
+            require("luasnip").jump(1)
+          end,
+          silent = true,
+          mode = { "i", "s" },
+        },
+        {
+          "<M-b>",
+          function()
+            require("luasnip").jump(-1)
+          end,
+          mode = { "i", "s" },
+        },
+      },
+    },
   },
   -- -------------------------------------------------
   --               DIAGFLOW                          |
@@ -110,26 +144,6 @@ return {
       format = function(diagnostic)
         return "[LSP] " .. diagnostic.message
       end,
-    },
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    keys = {
-      {
-        "<M-n>",
-        function()
-          require("luasnip").jump(1)
-        end,
-        silent = true,
-        mode = { "i", "s" },
-      },
-      {
-        "<M-b>",
-        function()
-          require("luasnip").jump(-1)
-        end,
-        mode = { "i", "s" },
-      },
     },
   },
 }
