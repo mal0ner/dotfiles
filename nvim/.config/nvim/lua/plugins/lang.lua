@@ -1,5 +1,9 @@
--- Treesitter auto install parsers
 return {
+
+  -- -------------------------------------------------
+  --               TREESITTER                        |
+  -- -------------------------------------------------
+  -- Treesitter auto install parsers
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
