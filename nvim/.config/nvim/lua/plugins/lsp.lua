@@ -2,6 +2,7 @@ return {
   -- -------------------------------------------------
   --               LSPCONFIG                         |
   -- -------------------------------------------------
+
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -30,9 +31,11 @@ return {
       },
     },
   },
+
   -- -------------------------------------------------
   --               NULL-LS                           |
   -- -------------------------------------------------
+
   {
     "nvimtools/none-ls.nvim",
     opts = function(_, opts)
@@ -51,9 +54,11 @@ return {
       )
     end,
   },
+
   -- -------------------------------------------------
   --               COMPLETION                        |
   -- -------------------------------------------------
+
   {
     "hrsh7th/nvim-cmp",
     version = false, -- last release is way too old
@@ -97,46 +102,57 @@ return {
           { name = "luasnip" },
           -- { name = "neorg" },
           { name = "path" },
-          { name = "buffer", keyword_length = 5 },
-        }),
+        }, { { name = "buffer", keyword_length = 5 } }),
+        formatting = {
+          format = function(_, item)
+            local icons = require("lazyvim.config").icons.kinds
+            if icons[item.kind] then
+              item.kind = icons[item.kind] .. item.kind
+            end
+            return item
+          end,
+        },
         experimental = {
-          native_menu = false,
           ghost_text = {
             hl_group = "LspCodeLens",
           },
         },
       }
     end,
-    -- -------------------------------------------------
-    --               SNIPPETATION                      |
-    -- -------------------------------------------------
-    {
-      "L3MON4D3/LuaSnip",
-      keys = {
-        {
-          "<M-n>",
-          function()
-            require("luasnip").jump(1)
-          end,
-          silent = true,
-          mode = { "i", "s" },
-        },
-        {
-          "<M-b>",
-          function()
-            require("luasnip").jump(-1)
-          end,
-          mode = { "i", "s" },
-        },
+  },
+
+  -- -------------------------------------------------
+  --               SNIPPETATION                      |
+  -- -------------------------------------------------
+
+  {
+    "L3MON4D3/LuaSnip",
+    keys = {
+      {
+        "<M-n>",
+        function()
+          require("luasnip").jump(1)
+        end,
+        silent = true,
+        mode = { "i", "s" },
+      },
+      {
+        "<M-b>",
+        function()
+          require("luasnip").jump(-1)
+        end,
+        mode = { "i", "s" },
       },
     },
   },
+
   -- -------------------------------------------------
   --               DIAGFLOW                          |
   --                                                 |
   --               Better placement for              |
   --               LSP Diagnostic Text               |
   -- -------------------------------------------------
+
   {
     "dgagn/diagflow.nvim",
     event = "LspAttach",

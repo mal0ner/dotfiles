@@ -1,11 +1,11 @@
 return {
   -- { "rebelot/kanagawa.nvim", lazy = true },
-  -- {
-  --   "mcchrish/zenbones.nvim",
-  --   dependencies = {
-  --     "rktjmp/lush.nvim",
-  --   },
-  -- },
+  {
+    "mcchrish/zenbones.nvim",
+    dependencies = {
+      "rktjmp/lush.nvim",
+    },
+  },
   -- {
   --   "rose-pine/neovim",
   --   name = "rose-pine",
@@ -46,7 +46,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "neobones",
     },
   },
 }
