@@ -45,3 +45,6 @@ abbr pp pnpm
 
 #homebrew
 abbr update "brew outdated | fzf --multi --reverse | xargs brew upgrade"
+
+# find files with neovim
+abbr fo "fd --type f --hidden --ignore-file ~/.config/fd/vimignore | fzf | xargs nvim"
