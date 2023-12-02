@@ -3,6 +3,7 @@ return {
   { "noice.nvim", enabled = false },
   { "nvim-notify", enabled = false },
   { "mini.comment", enabled = false },
-  -- { "neo-tree.nvim", enabled = false },
+  { "neo-tree.nvim", enabled = false },
   { "mini.surround", enabled = false },
+  { "indent-blankline.nvim", enabled = false },
 }

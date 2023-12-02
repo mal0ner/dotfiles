@@ -5,6 +5,22 @@ return {
     dependencies = {
       "rktjmp/lush.nvim",
     },
+    init = function()
+      -- Config for zenbones colorschemes
+      vim.g.zenbones = { transparent_background = true }
+      vim.g.forestbones = { transparent_background = true, darken_comments = 80 }
+      vim.g.neobones = { transparent_background = true }
+      vim.g.duckbones = { transparent_background = true }
+    end,
+  },
+  {
+    "blazkowolf/gruber-darker.nvim",
+    opts = {
+      bold = true,
+      italic = {
+        strings = true,
+      },
+    },
   },
   -- {
   --   "rose-pine/neovim",
@@ -46,7 +62,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "neobones",
+      colorscheme = "duckbones",
     },
   },
 }

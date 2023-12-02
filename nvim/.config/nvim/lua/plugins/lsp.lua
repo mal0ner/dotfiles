@@ -71,13 +71,16 @@ return {
     },
     opts = function()
       local cmp = require("cmp")
+      local luasnip = require("luasnip")
+      local tabout = require("tabout")
+
       return {
         -- setup = {
         --   preselect = cmp.PreselectMode.None,
         -- },
-        preselect = cmp.PreselectMode.None,
+        -- preselect = cmp.PreselectMode.None,
         completion = {
-          completeopt = "menu,menuone,noinsert,noselect",
+          completeopt = "menu,menuone",
         },
         snippet = {
           expand = function(args)
@@ -89,17 +92,25 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert({
+          ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
           ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if luasnip.expandable() then
+              luasnip.expand()
+            elseif luasnip.jumpable(1) then
+              luasnip.jump(1)
+            elseif vim.api.nvim_get_mode().mode == "i" then
+              tabout.tabout()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
+          { name = "luasnip", priority = 40 },
           { name = "nvim_lsp" },
-          { name = "luasnip" },
           -- { name = "neorg" },
           { name = "path" },
         }, { { name = "buffer", keyword_length = 5 } }),
@@ -120,30 +131,36 @@ return {
       }
     end,
   },
-
   -- -------------------------------------------------
   --               SNIPPETATION                      |
   -- -------------------------------------------------
 
   {
     "L3MON4D3/LuaSnip",
-    keys = {
-      {
-        "<M-n>",
-        function()
-          require("luasnip").jump(1)
-        end,
-        silent = true,
-        mode = { "i", "s" },
-      },
-      {
-        "<M-b>",
-        function()
-          require("luasnip").jump(-1)
-        end,
-        mode = { "i", "s" },
-      },
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip.loaders.from_lua").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/" })
+      end,
     },
+    -- keys = {
+    --   {
+    --     "<M-Tab>",
+    --     function()
+    --       require("luasnip").jump(1)
+    --     end,
+    --     silent = true,
+    --     mode = { "i", "s" },
+    --   },
+    --   {
+    --     "<M-S-Tab>",
+    --     function()
+    --       require("luasnip").jump(-1)
+    --     end,
+    --     mode = { "i", "s" },
+    --   },
+    -- },
   },
 
   -- -------------------------------------------------

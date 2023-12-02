@@ -34,13 +34,10 @@ return {
     },
   },
   -- -------------------------------------------------
-  --               YET ANOTHER BUILD SYSTEM          |
+  --               BETTER QUICKFIX LIST              |
   -- -------------------------------------------------
   {
-    "pianocomposer321/yabs.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    branch = "rewrite",
+    "kevinhwang91/nvim-bqf",
+    opts = {},
   },
 }
