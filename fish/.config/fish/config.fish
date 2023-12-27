@@ -6,11 +6,16 @@ starship init fish | source
 zoxide init fish | source
 
 set -Ux EDITOR nvim
+set -Ux STARSHIP_CONFIG ~/.config/starship/starship.toml
 set -Ux fish_greeting #disable fish greeting
 set -Ux fish_key_bindings fish_vi_key_bindings
 # set -Ux VOLTA_HOME $HOME/.volta
 # set -Ux VOLTA_FEATURE_PNPM 1 #enable volta pnpm support
 set -x DYLD_FALLBACK_LIBRARY_PATH "$(xcode-select --print-path)/usr/lib/"
+
+#for image.nvim
+eval "$(luarocks path --bin)"
+set -gx DYLD_LIBRARY_PATH /opt/homebrew/Cellar/imagemagick/7.1.1-23/lib/
 
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
@@ -41,4 +46,6 @@ end
 # pnpm end
 
 # opam configuration
-source /Users/cameronmalone/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+source /Users/cameronmalone/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
+
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
