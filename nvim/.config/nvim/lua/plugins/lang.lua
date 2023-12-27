@@ -14,6 +14,9 @@ return {
         vim.list_extend(opts.ensure_installed, { "astro" })
         vim.list_extend(opts.ensure_installed, { "ocaml" })
       end
+      opts.incremental_selection.keymaps.init_selection = "<CR>"
+      opts.incremental_selection.keymaps.node_incremental = "<CR>"
+      opts.incremental_selection.keymaps.node_decremental = "<BS>"
     end,
   },
 }

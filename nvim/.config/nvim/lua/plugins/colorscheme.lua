@@ -1,5 +1,7 @@
 return {
-  -- { "rebelot/kanagawa.nvim", lazy = true },
+  -- -------------------------------------------------
+  --               ZENBONES                          |
+  -- -------------------------------------------------
   {
     "mcchrish/zenbones.nvim",
     dependencies = {
@@ -13,6 +15,9 @@ return {
       vim.g.duckbones = { transparent_background = true }
     end,
   },
+  -- -------------------------------------------------
+  --               GRUBER-DARKER                     |
+  -- -------------------------------------------------
   {
     "blazkowolf/gruber-darker.nvim",
     opts = {
@@ -22,31 +27,9 @@ return {
       },
     },
   },
-  -- {
-  --   "rose-pine/neovim",
-  --   name = "rose-pine",
-  --   config = function()
-  --     require("rose-pine").setup({
-  --       disable_background = true,
-  --       disable_float_background = true,
-  --     })
-  --   end,
-  -- },
-  -- {
-  --   "neanias/everforest-nvim",
-  --   config = function()
-  --     require("everforest").setup({
-  --       background = "hard",
-  --       transparent_background_level = 3,
-  --     })
-  --   end,
-  -- },
-  -- {
-  --   "ramojus/mellifluous.nvim",
-  --   config = function()
-  --     require("mellifluous").setup({})
-  --   end,
-  -- },
+  -- -------------------------------------------------
+  --               CATPPUCCIN                        |
+  -- -------------------------------------------------
   {
     "catppuccin/nvim",
     lazy = false,
@@ -62,7 +45,36 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "duckbones",
+      colorscheme = "neobones",
     },
   },
 }
+
+-- -------------------------------------------------
+--               UNUSED COLORS                     |
+-- -------------------------------------------------
+-- {
+--   "rose-pine/neovim",
+--   name = "rose-pine",
+--   config = function()
+--     require("rose-pine").setup({
+--       disable_background = true,
+--       disable_float_background = true,
+--     })
+--   end,
+-- },
+-- {
+--   "neanias/everforest-nvim",
+--   config = function()
+--     require("everforest").setup({
+--       background = "hard",
+--       transparent_background_level = 3,
+--     })
+--   end,
+-- },
+-- {
+--   "ramojus/mellifluous.nvim",
+--   config = function()
+--     require("mellifluous").setup({})
+--   end,
+-- },

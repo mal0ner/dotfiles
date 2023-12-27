@@ -19,7 +19,6 @@ return {
       inlay_hints = { enabled = true },
       servers = {
         omnisharp = {},
-        rust_analyzer = {},
         pyright = {},
         ruff_lsp = {},
         emmet_language_server = {},
@@ -73,6 +72,7 @@ return {
       local cmp = require("cmp")
       local luasnip = require("luasnip")
       local tabout = require("tabout")
+      local compare = require("cmp.config.compare")
 
       return {
         -- setup = {
@@ -96,15 +96,18 @@ return {
           ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-Space>"] = cmp.mapping.complete(),
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if luasnip.expandable() then
+          -- source: https://www.reddit.com/r/neovim/comments/que9ey/tab_for_completion_and_snippets/
+          ["<Tab>"] = cmp.mapping(function()
+            --[[ if luasnip.expandable() then
               luasnip.expand()
             elseif luasnip.jumpable(1) then
-              luasnip.jump(1)
+              luasnip.jump(1) ]]
+            if luasnip.expand_or_locally_jumpable() then
+              luasnip.expand_or_jump()
             elseif vim.api.nvim_get_mode().mode == "i" then
               tabout.tabout()
             else
-              fallback()
+              vim.cmd("<Tab>")
             end
           end, { "i", "s" }),
         }),
@@ -114,12 +117,40 @@ return {
           -- { name = "neorg" },
           { name = "path" },
         }, { { name = "buffer", keyword_length = 5 } }),
+        -- sort the cmp menu options based on a number of metrics
+        -- in this order of priority
+        -- source: https://www.reddit.com/r/neovim/comments/u3c3kw/how_do_you_sorting_cmp_completions_items/
+        sorting = {
+          comparators = {
+            compare.locality,
+            compare.recently_used,
+            compare.score,
+            compare.offset,
+            compare.order,
+          },
+        },
         formatting = {
           format = function(_, item)
             local icons = require("lazyvim.config").icons.kinds
-            if icons[item.kind] then
+            if item.kind == "Snippet" then
+              item.kind = "󰅒 " .. item.kind
+            elseif icons[item.kind] then
               item.kind = icons[item.kind] .. item.kind
             end
+
+            -- trim long function signatures in cmp menu to a maximum of 40
+            -- chars to stop squishy docs
+            -- source: https://www.youtube.com/watch?v=uDPZ2yJS6os
+            local function trim(text)
+              local max = 40 --> max characters
+              if text and text:len() > max then
+                text = text:sub(1, max) .. "⋅⋅⋅"
+              end
+              return text
+            end
+
+            item.abbr = trim(item.abbr)
+
             return item
           end,
         },
@@ -134,7 +165,6 @@ return {
   -- -------------------------------------------------
   --               SNIPPETATION                      |
   -- -------------------------------------------------
-
   {
     "L3MON4D3/LuaSnip",
     dependencies = {
@@ -144,23 +174,6 @@ return {
         require("luasnip.loaders.from_lua").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/" })
       end,
     },
-    -- keys = {
-    --   {
-    --     "<M-Tab>",
-    --     function()
-    --       require("luasnip").jump(1)
-    --     end,
-    --     silent = true,
-    --     mode = { "i", "s" },
-    --   },
-    --   {
-    --     "<M-S-Tab>",
-    --     function()
-    --       require("luasnip").jump(-1)
-    --     end,
-    --     mode = { "i", "s" },
-    --   },
-    -- },
   },
 
   -- -------------------------------------------------
@@ -178,5 +191,57 @@ return {
         return "[LSP] " .. diagnostic.message
       end,
     },
+  },
+  -- -------------------------------------------------
+  --               GARBAGE-DAY                       |
+  --                                                 |
+  --               Restart idle LSP Servers          |
+  -- -------------------------------------------------
+  {
+    "zeioth/garbage-day.nvim",
+    dependencies = "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+    opts = {
+      -- your options here
+    },
+  },
+  -- -------------------------------------------------
+  --               SNIPPETATION                      |
+  -- -------------------------------------------------
+  {
+    "hrsh7th/cmp-cmdline",
+    event = "CmdlineEnter",
+    dependencies = "hrsh7th/nvim-cmp",
+    config = function()
+      local cmp = require("cmp")
+      local mapping = {
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+        ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+      }
+      cmp.setup.cmdline(":", {
+        preselect = "None",
+        completion = {
+          completeopt = "menu,preview,menuone,noselect",
+        },
+        mapping = mapping,
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          { name = "cmdline" },
+        }),
+        formatting = {
+          expandable_indicator = true,
+          fields = { "abbr" },
+          format = function(_, item)
+            item.abbr = " " .. item.abbr
+            return item
+          end,
+        },
+        experimental = {
+          ghost_text = true,
+        },
+      })
+    end,
   },
 }
