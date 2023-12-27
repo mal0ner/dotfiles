@@ -3,8 +3,8 @@ local wezterm = require("wezterm")
 local config = {}
 
 config.font_size = 20
--- config.color_scheme = "Sequoia Monochrome"
-config.color_scheme = "duckbones"
+config.color_scheme = "Sequoia Monochrome"
+-- config.color_scheme = "duckbones"
 
 config.window_background_opacity = 1.0
 config.macos_window_background_blur = 20
@@ -32,6 +32,7 @@ config.window_padding = {
 -- config.font = wezterm.font("MonaspaceXenon Nerd Font")
 -- config.allow_square_glyphs_to_overflow_width = "Never"
 config.font = wezterm.font("Iosevka Nerd Font", { weight = "Medium" })
+-- config.font = wezterm.font("GohuFont 14 Nerd Font")
 -- config.font_rules = {
 -- 	{
 -- 		-- use unpatched PragmataPro for italics
@@ -43,4 +44,6 @@ config.font = wezterm.font("Iosevka Nerd Font", { weight = "Medium" })
 -- 		}),
 -- 	},
 -- }
+
+config.enable_kitty_graphics = true
 return config
