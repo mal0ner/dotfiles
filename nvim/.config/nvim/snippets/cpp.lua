@@ -17,7 +17,11 @@ local get_name = function(node_index)
   end, { node_index })
 end
 
-return {
+local snippets = {}
+
+-- leetcode starter
+table.insert(
+  snippets,
   s(
     "leet",
     fmt(
@@ -84,5 +88,77 @@ return {
         i(6, "correct_value"),
       }
     )
-  ),
-}
+  )
+)
+
+-- readfile starter
+table.insert(
+  snippets,
+  s(
+    "rflines",
+    fmt(
+      [[
+      #include <iostream>
+      #include <fstream>
+      #include <string>
+
+      int main (int argc, char *argv[]) {{
+        std::ifstream f("{}");
+        std::string line;
+
+        if (f.is_open()) {{
+          while(std::getline(f, line)) {{
+            {};
+          }}
+
+          f.close();
+        }} else {{
+          std::cout << "unable to open file" << std::endl;
+        }}
+        return 0;
+      }}
+  ]],
+      {
+        i(1, "filename"),
+        i(2, "//do something..."),
+      }
+    )
+  )
+)
+
+-- read whole file into string
+table.insert(
+  snippets,
+  s(
+    "rflines",
+    fmt(
+      [[
+      #include <iostream>
+      #include <fstream>
+      #include <string>
+
+      int main (int argc, char *argv[]) {{
+        std::ifstream f("{}");
+        std::string line;
+
+        if (f.is_open()) {{
+          while(std::getline(f, line)) {{
+            {};
+          }}
+
+          f.close();
+        }} else {{
+          std::cout << "unable to open file" << std::endl;
+        }}
+        return 0;
+      }}
+  ]],
+      {
+        i(1, "filename"),
+        i(2, "//do something..."),
+      }
+    )
+  )
+)
+
+return snippets
