@@ -1,8 +1,6 @@
 alias vim='nvim'
 
 #command ALIASES
-alias ls='lsd -l --group-dirs first'
-alias lsa='lsd -A --group-dirs first'
 alias ','='z' #use the z (zoxide) script for better cd with history
 alias 'lg'='lazygit'
 alias '..'='cd ..'

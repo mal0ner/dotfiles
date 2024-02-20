@@ -14,8 +14,6 @@ set -Ux fish_key_bindings fish_vi_key_bindings
 set -x DYLD_FALLBACK_LIBRARY_PATH "$(xcode-select --print-path)/usr/lib/"
 
 #for image.nvim
-eval "$(luarocks path --bin)"
-set -gx DYLD_LIBRARY_PATH /opt/homebrew/Cellar/imagemagick/7.1.1-23/lib/
 
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
@@ -25,6 +23,8 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.config/emacs/bin
 fish_add_path $HOME/$VOLTA_HOME/bin
 fish_add_path $HOME/go/bin
+fish_add_path $HOME/Library/Python/3.11/bin
+fish_add_path $HOME/code/scripts
 # fish_add_path $HOME/.local/share/nvim/mason/bin
 
 fish_default_key_bindings

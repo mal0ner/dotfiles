@@ -1,7 +1,21 @@
 return {
-  -- -------------------------------------------------
-  --               ZENBONES                          |
-  -- -------------------------------------------------
+  {
+    "xero/miasma.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd("colorscheme miasma")
+    end,
+  },
+  {
+    "sainnhe/gruvbox-material",
+    config = function()
+      vim.cmd.colorscheme("gruvbox-material")
+      -- fix for weird border outlines on cmp-windows
+      -- source: https://www.reddit.com/r/neovim/comments/18faftd/cmp_border_background_is_changed_all_of_a_sudden/
+      vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+    end,
+  },
   {
     "mcchrish/zenbones.nvim",
     dependencies = {
@@ -15,66 +29,10 @@ return {
       vim.g.duckbones = { transparent_background = true }
     end,
   },
-  -- -------------------------------------------------
-  --               GRUBER-DARKER                     |
-  -- -------------------------------------------------
-  {
-    "blazkowolf/gruber-darker.nvim",
-    opts = {
-      bold = true,
-      italic = {
-        strings = true,
-      },
-    },
-  },
-  -- -------------------------------------------------
-  --               CATPPUCCIN                        |
-  -- -------------------------------------------------
-  {
-    "catppuccin/nvim",
-    lazy = false,
-    name = "catppuccin",
-    opts = {
-      flavour = "macchiato",
-      transparent_background = true,
-    },
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
-    end,
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "neobones",
-    },
-  },
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "neobones",
+  --   },
+  -- },
 }
-
--- -------------------------------------------------
---               UNUSED COLORS                     |
--- -------------------------------------------------
--- {
---   "rose-pine/neovim",
---   name = "rose-pine",
---   config = function()
---     require("rose-pine").setup({
---       disable_background = true,
---       disable_float_background = true,
---     })
---   end,
--- },
--- {
---   "neanias/everforest-nvim",
---   config = function()
---     require("everforest").setup({
---       background = "hard",
---       transparent_background_level = 3,
---     })
---   end,
--- },
--- {
---   "ramojus/mellifluous.nvim",
---   config = function()
---     require("mellifluous").setup({})
---   end,
--- },

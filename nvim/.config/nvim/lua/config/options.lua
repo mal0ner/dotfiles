@@ -13,7 +13,6 @@ vim.opt.scrolloff = 10
 vim.opt.pumblend = 0
 -- Uncomment to change cursor to block in all modes
 -- vim.opt.guicursor = ""
-
 -- set line number highlighting off
 -- vim.cmd("hi! LineNr guibg=none")
 
@@ -26,8 +25,8 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 -- vim.cmd("cnoreabbrev nw Neorg workspace")
 
 -- to replace indent-blankline
-vim.opt.list = true
-vim.opt.listchars = { leadmultispace = "│ ", tab = "│ " }
+-- vim.opt.list = true
+-- vim.opt.listchars = { leadmultispace = "│ ", tab = "│ " }
 
 -- QUICKFIX LIST FORMATTING
 local fn = vim.fn
@@ -83,3 +82,5 @@ function _G.qftf(info)
 end
 
 vim.o.qftf = "{info -> v:lua._G.qftf(info)}"
+
+vim.diagnostic.disable()

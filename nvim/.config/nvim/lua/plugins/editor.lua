@@ -19,11 +19,7 @@ return {
     version = "*",
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({
-        keymaps = {
-          visual = "bofl",
-        },
-      })
+      require("nvim-surround").setup({})
     end,
   },
   -- -------------------------------------------------
@@ -58,7 +54,7 @@ return {
     -- This plugin allows for easy expansion / collapse
     -- of treesitter text objects
     "Wansmer/treesj",
-    keys = { "<space>m", "<space>k", "<space>j" },
+    keys = { "<space>m" },
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("treesj").setup({--[[ your config ]]

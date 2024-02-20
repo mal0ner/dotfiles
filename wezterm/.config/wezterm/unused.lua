@@ -1,0 +1,28 @@
+-- config.color_scheme = "duckbones"
+-- config.font = wezterm.font("FantasqueSansMono Nerd Font")
+-- config.font_shaper = "Harfbuzz"
+-- config.harfbuzz_features = {
+-- 	"ss01",
+-- 	"ss02",
+-- 	"ss03",
+-- 	"ss04",
+-- 	"ss06",
+-- 	"ss07",
+-- 	"ss08",
+-- 	"calt",
+-- }
+-- config.font = wezterm.font("MonaspaceXenon Nerd Font")
+-- config.allow_square_glyphs_to_overflow_width = "Never"
+
+-- config.font = wezterm.font("GohuFont 14 Nerd Font")
+-- config.font_rules = {
+-- 	{
+-- 		-- use unpatched PragmataPro for italics
+-- 		italic = true,
+-- 		font = wezterm.font({
+-- 			family = "PragmataPro",
+-- 			style = "Italic",
+-- 			italic = true,
+-- 		}),
+-- 	},
+-- }

@@ -61,7 +61,20 @@ return {}
 --
 --
 -- return {
---   { "stevearc/oil.nvim", opts = {}, keys = { { "<leader>e", "<cmd>Oil<cr>", desc = "Open Parent Directory" } } },
+-- {
+--   "stevearc/oil.nvim",
+--   dependencies = { "nvim-tree/nvim-web-devicons" },
+--   config = function()
+--     require("oil").setup({
+--       columns = {
+--         "permissions",
+--         "size",
+--         "mtime",
+--         "icon",
+--       },
+--     })
+--   end,
+-- },
 -- }
 
 -- return {

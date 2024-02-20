@@ -2,12 +2,12 @@ local wezterm = require("wezterm")
 
 local config = {}
 
-config.font_size = 20
-config.color_scheme = "Sequoia Monochrome"
--- config.color_scheme = "duckbones"
-
-config.window_background_opacity = 1.0
-config.macos_window_background_blur = 20
+config.font_size = 19
+-- config.color_scheme = "Miasma"
+config.color_scheme = "Gruvbox Material (Gogh)"
+-- config.color_scheme = "tokyonight_night"
+-- config.color_scheme = "Sequoia Monochrome"
+-- config.color_scheme = "Grayscale (dark) (terminal.sexy)"
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
 config.window_padding = {
@@ -17,33 +17,12 @@ config.window_padding = {
 	top = 16,
 }
 
--- config.font = wezterm.font("FantasqueSansMono Nerd Font")
--- config.font_shaper = "Harfbuzz"
--- config.harfbuzz_features = {
--- 	"ss01",
--- 	"ss02",
--- 	"ss03",
--- 	"ss04",
--- 	"ss06",
--- 	"ss07",
--- 	"ss08",
--- 	"calt",
--- }
--- config.font = wezterm.font("MonaspaceXenon Nerd Font")
--- config.allow_square_glyphs_to_overflow_width = "Never"
-config.font = wezterm.font("Iosevka Nerd Font", { weight = "Medium" })
--- config.font = wezterm.font("GohuFont 14 Nerd Font")
--- config.font_rules = {
--- 	{
--- 		-- use unpatched PragmataPro for italics
--- 		italic = true,
--- 		font = wezterm.font({
--- 			family = "PragmataPro",
--- 			style = "Italic",
--- 			italic = true,
--- 		}),
--- 	},
--- }
+-- config.font = wezterm.font("Iosevka Nerd Font", { weight = "Medium" })
+-- config.font = wezterm.font("Input Mono Compressed")
+config.font = wezterm.font_with_fallback({
+	"Input Mono Compressed",
+	{ family = "Symbols Nerd Font Mono", scale = 0.75 },
+})
 
 config.enable_kitty_graphics = true
 return config

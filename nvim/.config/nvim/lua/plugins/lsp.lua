@@ -88,8 +88,8 @@ return {
           end,
         },
         window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
+          completion = cmp.config.window.bordered({ side_padding = 0 }),
+          documentation = cmp.config.window.bordered({ side_padding = 0 }),
         },
         mapping = cmp.mapping.preset.insert({
           ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
@@ -133,7 +133,7 @@ return {
           format = function(_, item)
             local icons = require("lazyvim.config").icons.kinds
             if item.kind == "Snippet" then
-              item.kind = "󰅒 " .. item.kind
+              item.kind = " " .. item.kind
             elseif icons[item.kind] then
               item.kind = icons[item.kind] .. item.kind
             end
@@ -171,7 +171,7 @@ return {
       "rafamadriz/friendly-snippets",
       config = function()
         require("luasnip.loaders.from_vscode").lazy_load()
-        require("luasnip.loaders.from_lua").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/" })
+        require("luasnip.loaders.from_lua").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets/" } })
       end,
     },
   },
@@ -220,15 +220,18 @@ return {
         ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
       }
       cmp.setup.cmdline(":", {
-        preselect = "None",
+        -- preselect = "None",
         completion = {
-          completeopt = "menu,preview,menuone,noselect",
+          completeopt = "noselect",
         },
         mapping = mapping,
         sources = cmp.config.sources({
-          { name = "path" },
+          { name = "path", keyword_length = 3 },
         }, {
-          { name = "cmdline" },
+          {
+            name = "cmdline",
+            keyword_length = 3,
+          },
         }),
         formatting = {
           expandable_indicator = true,

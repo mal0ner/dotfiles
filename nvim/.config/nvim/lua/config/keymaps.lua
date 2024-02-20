@@ -1,11 +1,8 @@
 -- resize windows
-vim.keymap.set("n", "<C-S-Up>", ":resize -2<CR>", { noremap = true })
-vim.keymap.set("n", "<C-S-Down>", ":resize +2<CR>", { noremap = true })
-vim.keymap.set("n", "<C-S-Left>", ":vertical resize -2<CR>", { noremap = true })
-vim.keymap.set("n", "<C-S-Right>", ":vertical resize +2<CR>", { noremap = true })
-
--- nvim navbuddy keymaps
-vim.keymap.set("n", "<leader>cc", "<cmd>Navbuddy<cr>", { desc = "Open Navbuddy" })
+vim.keymap.set("n", "<M-Up>", "<cmd>resize -2<CR>")
+vim.keymap.set("n", "<M-Down>", "<cmd>resize +2<CR>")
+vim.keymap.set("n", "<M-Left>", "<cmd>vertical resize -2<CR>")
+vim.keymap.set("n", "<M-Right>", "<cmd>vertical resize +2<CR>")
 
 -- nvim tmux navigator keymaps
 vim.keymap.set("n", "<C-k>", "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Navigate North in tmux" })
@@ -39,3 +36,19 @@ end, { desc = "Find Snippets" })
 
 -- Telescope file_browser
 vim.keymap.set("n", "<leader>.", "<cmd>Telescope file_browser<CR>", { desc = "Telescope file browser" })
+
+-- Diagnostics
+local enabled = false
+local function toggle_diagnostics()
+  enabled = not enabled
+  if enabled then
+    vim.diagnostic.enable()
+    local util = require("lazyvim.util")
+    util.info("Enabled diagnostics", { title = "Diagnostics" })
+  else
+    vim.diagnostic.disable()
+    local util = require("lazyvim.util")
+    util.warn("Disabled diagnostics", { title = "Diagnostics" })
+  end
+end
+vim.keymap.set("n", "<leader>ud", toggle_diagnostics, { desc = "Toggle Diagnostics" })
