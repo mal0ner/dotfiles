@@ -61,20 +61,36 @@ return {}
 --
 --
 -- return {
--- {
---   "stevearc/oil.nvim",
---   dependencies = { "nvim-tree/nvim-web-devicons" },
---   config = function()
---     require("oil").setup({
---       columns = {
---         "permissions",
---         "size",
---         "mtime",
---         "icon",
+--   {
+--     "stevearc/oil.nvim",
+--     dependencies = { "nvim-tree/nvim-web-devicons" },
+--     lazy = false,
+--     config = function()
+--       require("oil").setup({
+--         columns = {
+--           "permissions",
+--           "size",
+--           "mtime",
+--           "icon",
+--         },
+--         buf_options = { buflisted = true, bufhidden = "hide" },
+--         cleanup_dlay_ms = false,
+--         view_options = {
+--           sort = {
+--             { "type", "asc" },
+--             { "name", "asc" },
+--           },
+--         },
+--       })
+--     end,
+--     keys = {
+--       {
+--         "<leader>e",
+--         "<cmd>Oil<cr>",
+--         desc = "Oil (file explorer)",
 --       },
---     })
---   end,
--- },
+--     },
+--   },
 -- }
 
 -- return {
@@ -274,3 +290,19 @@ return {}
 --     },
 --   },
 -- }
+--
+
+-- -- -------------------------------------------------
+-- --               TREESJ                            |
+-- -- -------------------------------------------------
+-- {
+--   -- This plugin allows for easy expansion / collapse
+--   -- of treesitter text objects
+--   "Wansmer/treesj",
+--   keys = { "<space>m" },
+--   dependencies = { "nvim-treesitter/nvim-treesitter" },
+--   config = function()
+--     require("treesj").setup({--[[ your config ]]
+--     })
+--   end,
+-- },

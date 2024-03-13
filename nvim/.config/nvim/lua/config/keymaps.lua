@@ -4,15 +4,10 @@ vim.keymap.set("n", "<M-Down>", "<cmd>resize +2<CR>")
 vim.keymap.set("n", "<M-Left>", "<cmd>vertical resize -2<CR>")
 vim.keymap.set("n", "<M-Right>", "<cmd>vertical resize +2<CR>")
 
--- nvim tmux navigator keymaps
-vim.keymap.set("n", "<C-k>", "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Navigate North in tmux" })
-vim.keymap.set("n", "<C-j>", "<cmd>NvimTmuxNavigateDown<cr>", { desc = "Navigate South in tmux" })
-vim.keymap.set("n", "<C-l>", "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Navigate East in tmux" })
-vim.keymap.set("n", "<C-h>", "<cmd>NvimTmuxNavigateLeft<cr>", { desc = "Navigate West in tmux" })
-
 -- better C-d and C-u, from ThePrimeagen baby
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+local f = function(lhs, rhs, opts) end
 
 -- cycle through windows with TAB in normal mode, thanks reddit
 vim.keymap.set("n", "<TAB>", "<C-w>w")

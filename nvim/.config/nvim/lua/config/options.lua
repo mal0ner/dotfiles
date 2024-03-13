@@ -1,6 +1,6 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
-
+local u = require("lazyvim.util")
 -- Set winbar
 -- vim.opt.winbar = "%=%m %f" -- sets curr filename to top left wind
 vim.g.netrw_browse_split = 0
@@ -8,7 +8,12 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 100
 
 vim.opt.scrolloff = 10
--- vim.opt.background = "light"
+vim.opt.background = "light"
+
+-- if you want to set the val of opt.background
+-- dynamically based on time
+-- local currentHour = os.date("%H") -- Get the current hour (0-23)
+-- local darkness = (currentHour >= 20 or currentHour < 8) and "dark" or "light"
 
 vim.opt.pumblend = 0
 -- Uncomment to change cursor to block in all modes

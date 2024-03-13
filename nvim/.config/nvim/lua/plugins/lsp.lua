@@ -5,15 +5,15 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      {
-        "SmiteshP/nvim-navbuddy",
-        dependencies = {
-          "SmiteshP/nvim-navic",
-          "MunifTanjim/nui.nvim",
-        },
-      },
-    },
+    -- dependencies = {
+    --   {
+    --     "SmiteshP/nvim-navbuddy",
+    --     dependencies = {
+    --       "SmiteshP/nvim-navic",
+    --       "MunifTanjim/nui.nvim",
+    --     },
+    --   },
+    -- },
     ---@class PluginLspOpts
     opts = {
       inlay_hints = { enabled = true },
@@ -35,24 +35,24 @@ return {
   --               NULL-LS                           |
   -- -------------------------------------------------
 
-  {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      local nls = require("null-ls")
-      table.insert(opts.sources, nls.builtins.formatting.black)
-      table.insert(opts.sources, nls.builtins.formatting.csharpier)
-      table.insert(opts.sources, nls.builtins.formatting.rustfmt)
-      table.insert(opts.sources, nls.builtins.formatting.prettierd)
-      table.insert(opts.sources, nls.builtins.formatting.ocamlformat)
-      -- prettierd does not work with astro currently
-      table.insert(
-        opts.sources,
-        nls.builtins.formatting.prettier.with({
-          filetypes = { "astro" },
-        })
-      )
-    end,
-  },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   opts = function(_, opts)
+  --     local nls = require("null-ls")
+  --     table.insert(opts.sources, nls.builtins.formatting.black)
+  --     table.insert(opts.sources, nls.builtins.formatting.csharpier)
+  --     table.insert(opts.sources, nls.builtins.formatting.rustfmt)
+  --     table.insert(opts.sources, nls.builtins.formatting.prettierd)
+  --     table.insert(opts.sources, nls.builtins.formatting.ocamlformat)
+  --     -- prettierd does not work with astro currently
+  --     table.insert(
+  --       opts.sources,
+  --       nls.builtins.formatting.prettier.with({
+  --         filetypes = { "astro" },
+  --       })
+  --     )
+  --   end,
+  -- },
 
   -- -------------------------------------------------
   --               COMPLETION                        |
