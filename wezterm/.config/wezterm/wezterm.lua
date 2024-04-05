@@ -5,11 +5,13 @@ local config = {}
 config.font_size = 19
 -- config.color_scheme = "Miasma"
 config.color_scheme = "Gruvbox Material (Gogh)"
-config.color_scheme = "terafox"
-config.color_scheme = "zenbones"
+config.color_scheme = "zenbones_dark"
+-- config.color_scheme = "neobones_dark"
 -- config.color_scheme = "tokyonight_night"
 -- config.color_scheme = "Sequoia Monochrome"
 -- config.color_scheme = "Grayscale (dark) (terminal.sexy)"
+config.color_scheme = "zenbones"
+config.color_scheme = "Poimandres"
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
 config.window_padding = {
@@ -25,6 +27,7 @@ config.font = wezterm.font_with_fallback({
 	"Input Mono Compressed",
 	{ family = "Symbols Nerd Font Mono", scale = 0.75 },
 })
+-- config.font = wezterm.font("JetBrainsMono Nerd Font")
 
 config.enable_kitty_graphics = true
 return config
