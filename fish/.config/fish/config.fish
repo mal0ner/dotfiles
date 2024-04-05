@@ -25,7 +25,6 @@ fish_add_path $HOME/$VOLTA_HOME/bin
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/Library/Python/3.11/bin
 fish_add_path $HOME/code/scripts
-# fish_add_path $HOME/.local/share/nvim/mason/bin
 
 fish_default_key_bindings
 
