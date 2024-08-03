@@ -28,7 +28,7 @@ fish_add_path $HOME/code/scripts
 
 fish_default_key_bindings
 
-alias ls "exa --icons --group-directories-first --color always"
+alias ls "exa --icons --group-directories-first --sort type --color always"
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!

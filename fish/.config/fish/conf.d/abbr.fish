@@ -51,3 +51,7 @@ abbr fo "fd --type f --hidden --ignore-file ~/.config/fd/vimignore | fzf | xargs
 
 # nvim profile
 abbr cvim "NVIM_APPNAME=nvim.fromscratch.bak nvim"
+
+# codecrafters
+abbr ccs "codecrafters submit"
+abbr cct "codecrafters test"
