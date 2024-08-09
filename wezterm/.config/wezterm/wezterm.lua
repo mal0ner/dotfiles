@@ -10,6 +10,19 @@ local fonts = {
 	proto = wezterm.font("0xProto Nerd Font"),
 }
 
+local schemes = {
+	grayscale = "Grayscale (dark) (terminal.sexy)",
+	gruvbox_dark = "Gruvbox dark, hard (base16)",
+	gruvbox_material = "Gruvbox Material (Gogh)",
+	tokyonight_night = "tokyonight_night",
+	zenbones_dark = "zenbones_dark",
+	sequoia = "Sequoia Monochrome",
+	neobones = "neobones_dark",
+	poimandres = "Poimandres",
+	zenbones = "zenbones",
+	miasma = "miasma",
+}
+
 local config = {}
 
 config.font_size = 18
