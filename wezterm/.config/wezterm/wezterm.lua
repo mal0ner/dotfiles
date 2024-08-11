@@ -21,12 +21,14 @@ local schemes = {
 	poimandres = "Poimandres",
 	zenbones = "zenbones",
 	miasma = "miasma",
+	neovim = "NvimDark",
+	kanagawa = "Kanagawa (Gogh)",
 }
 
 local config = {}
 
-config.font_size = 18
-config.color_scheme = "Gruvbox dark, hard (base16)"
+config.font_size = 17
+config.color_scheme = schemes.kanagawa
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
 config.window_padding = {
