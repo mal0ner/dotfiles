@@ -4,7 +4,7 @@ local fonts = {
 	iosekva = wezterm.font("Iosevka Nerd Font", { weight = "Medium" }),
 	input = wezterm.font_with_fallback({
 		"Input Mono Compressed",
-		{ family = "Symbols Nerd Font Mono", scale = 0.85 },
+		{ family = "Symbols Nerd Font Mono", scale = 0.65 },
 	}),
 	jetbrains = wezterm.font("JetBrainsMono Nerd Font"),
 	proto = wezterm.font("0xProto Nerd Font"),
@@ -28,7 +28,7 @@ local schemes = {
 local config = {}
 
 config.font_size = 17
-config.color_scheme = schemes.kanagawa
+config.color_scheme = schemes.zenbones_dark
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
 config.window_padding = {
@@ -38,7 +38,7 @@ config.window_padding = {
 	top = 16,
 }
 
-config.font = fonts.proto
+config.font = fonts.input
 
 config.enable_kitty_graphics = true
 return config
