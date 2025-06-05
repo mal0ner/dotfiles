@@ -1,9 +1,13 @@
 # program abbrs
 abbr vim nvim
 abbr lg lazygit
+abbr lado lazydocker
 
-# place abbrs
-abbr dot "z dotfiles && nvim"
+# git
+abbr gco "git checkout"
+abbr gcb "git checkout -b"
+abbr glo "git log --oneline --all"
+abbr gfap "git fetch --all --prune"
 
 # command abbrs
 abbr c clear
@@ -32,7 +36,6 @@ abbr mi "micromamba install"
 # man-style pages with tldr
 abbr toolong "tldr --list | fzf --header 'I ain readin allat' --reverse --preview 'tldr {1}' --preview-window=right,80% | xargs tldr"
 
-
 # buku - CLI Bookmarks Manager https://github.com/jarun/buku#usage
 abbr b "buku --suggest"
 abbr bs "buku --suggest -s"
@@ -49,9 +52,9 @@ abbr update "brew outdated | fzf --multi --reverse | xargs brew upgrade"
 # find files with neovim
 abbr fo "fd --type f --hidden --ignore-file ~/.config/fd/vimignore | fzf | xargs nvim"
 
-# nvim profile
-abbr cvim "NVIM_APPNAME=nvim.fromscratch.bak nvim"
-
 # codecrafters
 abbr ccs "codecrafters submit"
 abbr cct "codecrafters test"
+
+# yazi file manager
+abbr e yazi

@@ -1,34 +1,30 @@
+# Commands to run in interactive sessions can go here
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    starship init fish | source
+    zoxide init fish | source
+    atuin init fish --disable-up-arrow | source
 end
 
-starship init fish | source
-zoxide init fish | source
+# binaries
+fish_add_path ~/.cargo/bin
+fish_add_path ~/go/bin
+fish_add_path ~/Library/Python/3.11/bin
+fish_add_path ~/.local/bin
+fish_add_path ~/.config/tmux/plugins/t-smart-tmux-session-manager/bin
+# custom scripts
+fish_add_path ~/code/scripts
 
-set -Ux EDITOR nvim
-set -Ux STARSHIP_CONFIG ~/.config/starship/starship.toml
-set -Ux fish_greeting #disable fish greeting
-set -Ux fish_key_bindings fish_vi_key_bindings
-# set -Ux VOLTA_HOME $HOME/.volta
-# set -Ux VOLTA_FEATURE_PNPM 1 #enable volta pnpm support
-set -x DYLD_FALLBACK_LIBRARY_PATH "$(xcode-select --print-path)/usr/lib/"
+# Only for mac
+if test "$(uname)" = Darwin
+    fish_add_path /opt/homebrew/bin
+    fish_add_path /opt/homebrew/sbin
+    # I forgot what issue this was causing but it was annoying
+    set -x DYLD_FALLBACK_LIBRARY_PATH "$(xcode-select --print-path)/usr/lib/"
+end
 
-#for image.nvim
-
-fish_add_path /opt/homebrew/bin
-fish_add_path /opt/homebrew/sbin
-fish_add_path $HOME/.local/bin
-fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
-fish_add_path $HOME/.cargo/bin
-fish_add_path $HOME/.config/emacs/bin
-fish_add_path $HOME/$VOLTA_HOME/bin
-fish_add_path $HOME/go/bin
-fish_add_path $HOME/Library/Python/3.11/bin
-fish_add_path $HOME/code/scripts
-
-fish_default_key_bindings
-
-alias ls "exa --icons --group-directories-first --sort type --color always"
+set -gx EDITOR nvim
+set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
+set -gx fish_greeting # disable greeting message
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!

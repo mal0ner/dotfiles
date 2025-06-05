@@ -1,1 +1,1 @@
-alias zilean="~/code/scripts/zilean/zilean"
+alias ls "exa --icons --group-directories-first --sort type --color always"
